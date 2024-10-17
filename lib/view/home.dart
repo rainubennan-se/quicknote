@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quicknote/create.dart';
+import 'package:quicknote/view/create.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -21,7 +21,10 @@ class _MyHomePageState extends State<MyHomePage> {
         centerTitle: true,
         actions: [
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                // Navigator.push(context,
+                //     MaterialPageRoute(builder: (context) => Tasklist()));
+              },
               icon: Icon(
                 Icons.list,
                 color: Colors.purple[900],
@@ -44,12 +47,23 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      body: const Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[],
-        ),
-      ),
+      body: ListView.builder(
+          itemCount: 15,
+          itemBuilder: (context, index) {
+            return ListTile(
+              leading: IconButton(
+                  onPressed: () {},
+                  color: Colors.deepPurple,
+                  tooltip: 'Edit',
+                  icon: const Icon(Icons.edit_calendar)),
+              title: const Text('Title'),
+              trailing: IconButton(
+                  onPressed: () {},
+                  color: Colors.deepPurple,
+                  tooltip: 'Delete',
+                  icon: const Icon(Icons.delete_outlined)),
+            );
+          }),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(

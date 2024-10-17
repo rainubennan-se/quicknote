@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quicknote/home.dart';
+import 'package:quicknote/view/home.dart';
 
 void main() {
   runApp(const MyApp());
